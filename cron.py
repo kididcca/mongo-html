@@ -1,8 +1,9 @@
-import os, time
-from pymongo import MongoClient 
+from pymongo import MongoClient
+from os import getenv
+from time import sleep
 
-cliente = MongoClient(os.getenv('MONGO_SERVER', 'nuvem.sj.ifsc.edu.br'))
-db = cliente[os.getenv('DATABASE', 'estacao')]
+cliente = MongoClient(getenv('MONGO_SERVER', 'nuvem.sj.ifsc.edu.br'))
+db = cliente[getenv('DATABASE', 'estacao')]
 
 while True:
     dados_recebidos = []
@@ -59,4 +60,4 @@ while True:
     saida.close()
     html.close()
     
-    time.sleep(60)
+    sleep(60)
