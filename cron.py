@@ -11,7 +11,7 @@ while True:
     lista_colecoes = db.collection_names()
 
     saida = open("html/dados.js", "w")
-    html = open("html/page.html", "w")
+    html = open("html/index.html", "w")
 
     html.write('<!DOCTYPE html>\n')
     html.write('<html>\n')
@@ -56,8 +56,8 @@ while True:
     html.write('<script src="dados.js"></script>\n')
     html.write('</body>\n')
     html.write('</html>\n')
-    
+
     saida.close()
     html.close()
-    
+
     sleep(60)
